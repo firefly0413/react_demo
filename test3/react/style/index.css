@@ -1,0 +1,218 @@
+*{
+	margin: 0;padding: 0;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	list-style: none;
+}
+.dn{
+	display: none;
+}
+.commentTest{
+	width: 600px;
+	margin: 0 auto;
+	position: relative;
+}
+.commentTest h3{
+	font-size: 30px;
+	text-align: center;
+	color: #09f;
+	margin: 10px 0;
+}
+.commentTest .iptArea{
+	width: 500px;
+	height: 150px;
+	margin: 0 auto;
+	text-indent: 1em;
+}
+.listItem{
+	margin: 20px 0;
+}
+.listItem li{
+	width: 490px;height: 30px;
+	line-height: 30px;
+	border-bottom: 1px dashed #ccc;
+	padding-left: 10px;
+}
+.subBtn{
+	display: block;
+	margin-left: 450px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.tableMine th,.tableMine td{
+	text-align: center;
+}
+.ml20{
+	margin-left: 20px;
+}
+.btnRed{
+	background: red;
+	border: none;
+	color: #fff;
+}
+.entry{
+	overflow: hidden;
+}
+.entry label{
+	height: 34px;
+	line-height: 34px;
+	margin: 0;
+	text-align: center;
+}
+#drop1{
+	margin-left: 20px;
+	margin-bottom: -10px;
+}
+#drop1 + .dropdown-menu{
+	width: 100px;
+	margin-bottom: -20px;
+}
+.dn{
+	display: none;
+}
+.clearfix:after{
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.modal1 label{
+	font-weight: normal;
+	text-align: right;
+	transform: translateY(5px);
+}
+.closeBtn{
+	background: rgb(219,69,32);
+	margin-left: 20px;
+	color: #fff;
+}
+.closeBtn:hover{
+	color: #fff;
+	background:rgb(255,69,32) ;
+}
+.addBtn{
+	
+	width: 64px;
+	height: 28px;
+}
+.roomBtn{
+	height: 30px;
+	margin-left: 20px;
+	padding: 0;
+}
+.roomBtn a{
+	color: #333;
+	padding: 6px 12px;
+	font-size: 12px;
+	line-height: 16px;
+	text-decoration: none;
+}
+.textCenter{
+	text-align: center;
+}
+.calendarPanel{
+	width: 800px;
+	margin: 0 auto;
+}
+.selBox{
+	width: 240px;
+	margin: 20px 20px 30px 500px;
+}
+.selBox .btn-toolbar{
+	width: 100px;
+	float: left;
+}
+.selBox .dropdown-menu{
+	width: 80px;
+	min-width: 0;
+	text-align: center;
+}
+.calendarPanel .selYear,.calendarPanel .selMonth{
+	width: 80px;
+}
+.calendarTable tbody tr td{
+	height: 80px;
+	line-height: 80px;
+	font-size: 22px;
+}
+.calendarTable .ccc{
+	background: #eee;
+}
+.calendarTable .today{
+	background: #09f;
+	color: #fff;
+}
+.example-enter {
+	opacity: 0.01;
+	left: 1280px;
+	transition: opacity 1s ease-in-out;
+}
+.example-enter.example-enter-active {
+	opacity: 1;
+	left: 0;
+}
+
+.example-leave {
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
+}
+
+.example-leave.example-leave-active {
+	opacity: 0.01;
+}
+
+
+.loginBox{
+	width:400px;
+	margin:300px auto;
+	border-radius:20px;
+}
+.inputArea input{
+	margin-bottom: 20px;
+}
+
+#i_submit{
+	width:100%;
+	background:#fa0;
+}
+
+
+/*头部*/
+.header{
+	width:100%;
+	height:100px;
+	background:#09f;
+	font-size:26px;
+	color:#fff;
+	font-weight:600;
+	line-height:100px;
+	text-align: center;
+}
+
+.aside{
+	min-width:120px;
+	min-height:700px;
+	background:#555;
+	padding:0;
+}
+.aside .panel-group{
+	width:100%;
+}
+.aside .panel-group .panel{
+	border-radius:0;
+	text-align: center;
+	background:#333;
+	color:#fff;
+	cursor:pointer;
+}
+.aside .panel-group .panel.active{
+	color:#fa0;
+}
+.aside .panel-group .panel + .panel {
+    margin-top: 0;
+}
+.myForm .form-control-feedback {
+	right:20px;
+}
