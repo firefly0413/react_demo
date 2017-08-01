@@ -25,11 +25,11 @@ class Login extends Component{
 	}
 
 	doLogin(){
-		var userName = this.refs["userName"].value;
-		var passWord = this.refs["passWord"].value;
+		let userName = this.refs["userName"].value;
+		let passWord = this.refs["passWord"].value;
 
 		if(userName == "erik" && passWord == "123"){
-			console.log(this.context)
+			console.log(this.context);
 			this.context.router.push("/student");
 		}
 	}
@@ -40,4 +40,4 @@ Login.contextTypes = {
 	store:React.PropTypes.object
 }
 
-export default connect(state=>state)(Login);
+export default Login;

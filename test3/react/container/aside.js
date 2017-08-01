@@ -2,10 +2,11 @@ import React,{Component,PropTypes} from "react"
 import { PanelGroup,Panel } from 'react-bootstrap';
 
 const lists = [
-		{listName:'学生列表',path:'student', className:'j_student'},
-		{listName:'房型列表',path:'roomList', className:'j_roomList'},
-		{listName:'日历',path:'myCalendar', className:'j_myCalendar'},
-		{listName:'表单测试',path:'formTest', className:'formTest'}
+		{listName:'基础测试',path:'student', className:'j_student'},
+		{listName:'日历组件',path:'myCalendar', className:'j_myCalendar'},
+		{listName:'表单测试',path:'formTest', className:'formTest'},
+		{listName:'context测试',path:'contextTest',className:'contextTest'},
+  	{listName:'组件测试',path:'compTest',className:'compTest'}
 	];
 
 class Aside extends Component{

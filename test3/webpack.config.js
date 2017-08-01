@@ -1,6 +1,7 @@
 var path = require("path");
 var htmlWebpackPlugin = require("html-webpack-plugin");
 var webpack = require("webpack");
+//const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
 	devtools:"source-map",
 	entry:{
@@ -13,11 +14,11 @@ module.exports = {
 	},
 	module:{
 		loaders:[
-			{
-				test:/\.css$/,
-				loaders:["style","css"],
-				exclude:"/node_modules/"
-			},
+      {
+        test:/\.css$/,
+        loaders:["style","css"],
+        exclude:"/node_modules/"
+      },
 			{
 				test: /\.jsx?$/,
 				loaders: ['react-hot', 'babel?' + JSON.stringify({presets: ['react', 'es2015', 'stage-0', 'stage-1']})],
@@ -33,6 +34,7 @@ module.exports = {
 	},
 	devServer:{
 		hot:true,
+    colors: true,
 		inline:true
 	},
 	resolve:{
@@ -43,6 +45,8 @@ module.exports = {
 		new htmlWebpackPlugin({
 			title:"react test",
 			chunks:["index","vendors"]
-		})
+		}),
+    //new ExtractTextPlugin("styles.css"),
+		new webpack.BannerPlugin("Copyright Firefly inc.")
 	]
 }

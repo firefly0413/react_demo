@@ -6,7 +6,7 @@ import {Provider} from "react-redux"
 import rootReducer from "./reducers/index"
 import {createStore} from "redux"
 let store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-var oDiv = document.createElement("div");
+let oDiv = document.createElement("div");
 document.body.appendChild(oDiv);
 
 ReactDom.render(

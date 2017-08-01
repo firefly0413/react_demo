@@ -1,4 +1,4 @@
-import * as types from '../actionCreator/actionType';
+import * as types from '../action/actionType';
 const initialState = {
 			result:[
 				{roomNum:101,name:"海景房",price:380,enable:true},

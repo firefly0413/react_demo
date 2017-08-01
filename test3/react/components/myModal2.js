@@ -4,10 +4,13 @@ import {Modal,Button} from "react-bootstrap"
 class MyModal2 extends Component{
 	constructor(props){
 		super(props)
+		this.state = {
+			showModal:false
+		}
 	}
 	render(){
 		return (
-			<div>
+			<Modal show={this.state.showModal} onHide={()=>{this.setState({showModal:false})}}>
 				<Modal.Header closeButton>
 					<Modal.Title>
 						<div>确认框</div>
@@ -18,16 +21,21 @@ class MyModal2 extends Component{
 				</Modal.Body>
 				<Modal.Footer>
 					<Button bsStyle="primary" bsSize="small" onClick={this.doConfirm.bind(this)}>确定</Button>
-					<Button bsStyle="default" bsSize="small" onClick={this.doClose.bind(this)}>取消</Button>
+					<Button bsStyle="default" bsSize="small" onClick={()=>{this.setState({showModal:false})}}>取消</Button>
 				</Modal.Footer>
-			</div>
+			</Modal>
 		)
+	}
+	showModal(){
+		this.setState({
+			showModal:true
+		})
 	}
 	doConfirm(){
 		this.props.confirmDel(this.props.index);
-	}
-	doClose(){
-		this.props.doClose();
+		this.setState({
+			showModal:false
+		})
 	}
 }
 

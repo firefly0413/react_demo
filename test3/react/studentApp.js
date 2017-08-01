@@ -3,9 +3,9 @@ import "./style/dist/css/bootstrap.css";
 import "./style/index.css";
 
 import {Modal,Button} from "react-bootstrap"
-import {Link} from "react-router"
 import {connect} from "react-redux"
-import {deleteItem,addItem,editItem} from "./actionCreator/actions"
+import {bindActionCreators} from 'redux'
+import {deleteItem,addItem,editItem,addList} from "./action/actions"
 import MyModal from "./components/myModal"
 import {MyModal2} from "./components/myModal2"
 import ReactCSSTransitionGroup from "react-addons-css-transition-group"
@@ -26,7 +26,7 @@ class StudentApp extends Component{
 			}
 		}
 		render(){
-			let results = this.props.member;
+      let results = this.props.member;
 			let _this = this;
 			return(
 				<div>
@@ -75,36 +75,29 @@ class StudentApp extends Component{
 							</table>
 						</div>
 					</div>
-					 <Modal className="modal1" show={this.state.showModal} onHide={this.closeModal.bind(this)}>
-			          	<MyModal title={this.state.formInfo} doClose = {this.closeModal.bind(this)} addStudent={this.addStudent.bind(this)} editStudent = {this.editStudent.bind(this)} />
-					 </Modal>
-					 <Modal className="modal2" show={this.state.showModal2} onHide={this.closeModal2.bind(this)}>
-							<MyModal2 index = {this.state.index} confirmDel = {this.confirmDel.bind(this)} doClose = {this.closeModal2.bind(this)} />
-					 </Modal>
+				  <Modal className="modal1" show={this.state.showModal} onHide={this.closeModal.bind(this)}>
+					  <MyModal title={this.state.formInfo} doClose = {this.closeModal.bind(this)} addStudent={this.addStudent.bind(this)} editStudent = {this.editStudent.bind(this)} />
+				  </Modal>
+					<MyModal2 ref="modal2"
+						index = {this.state.index}
+						confirmDel = {this.confirmDel.bind(this)} />
 				</div>
 			)
 		}
 		doDelete(index){
+			this.refs['modal2'].showModal();
 			this.setState({
-				showModal2:true,
-				index:index
-			});
-		}
-		closeModal2(){
-			this.setState({
-				showModal2:false
-			});
+				index
+			})
 		}
 		confirmDel(index){
-			let _this = this;
-			let promise = new Promise(function(resolve,reject){
-				_this.props.dispatch(deleteItem(index));
- 				resolve();
-			});
-			promise.then(function(){
-				_this.setState({
-					showModal2:false
-				});
+      let {pageActions:{deleteItem}} = this.props;
+      //let {deleteItem} = this.props;
+      this.setState({
+        showModal2:false
+      },()=>{
+      	//dispatch action
+        deleteItem(index);
 			});
 		}
 		addItem(data){
@@ -120,24 +113,32 @@ class StudentApp extends Component{
 			})
 		}
 		addStudent(data){
-			this.setState({showModal:false});
-			this.props.dispatch(addItem(data));
+      let {pageActions:{addItem}} = this.props;
+			this.setState({showModal:false},()=>{
+        addItem(data);
+			});
 		}
 		editStudent(index,data){
-			this.setState({showModal:false});
-			this.props.dispatch(editItem(index,data));
+      let {pageActions:{editItem}} = this.props;
+			this.setState({showModal:false},()=>{
+        editItem(index,data);
+			});
 		}
 		closeModal(){
 			this.setState({showModal:false});
 		}
 }
+
+
 function theState(state){
 	return {member:state.memberlist.results}
 }
 
-StudentApp.contextTypes = {
-	router: React.PropTypes.object.isRequired,
-	store:React.PropTypes.object
-};
+function mapDispatch(dispatch){
+	return {
+		pageActions:bindActionCreators({deleteItem,addItem,editItem,addList},dispatch)
+	}
+}
 
-export default connect(theState)(StudentApp);
+
+export default connect(theState,mapDispatch)(StudentApp);

@@ -216,3 +216,19 @@
 .myForm .form-control-feedback {
 	right:20px;
 }
+
+.normBlock{
+	border:1px solid #333;
+	padding:20px;
+}
+.testBlock{
+	padding:20px 0;
+}
+.block_title{
+	margin-left:-10px;
+}
+.scrollTest div{
+	height:30px;
+	text-align: center;
+	line-height:30px;
+}

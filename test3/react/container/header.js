@@ -15,7 +15,7 @@ class Header extends Component {
 		let _this = this;
 		return (
 			<div className="header">
-				我来组成头部
+				这里是头部
 			</div>
 		)
 	}
