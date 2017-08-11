@@ -1,0 +1,38 @@
+.ui-slider-wraper{
+  margin: 10px 0;
+}
+.ui-slider-wraper *{
+  box-sizing:border-box;
+}
+
+.ui-slider-horizontal{
+  width:0;
+  height:10px;
+  position:relative;
+  overflow:visible;
+  cursor:pointer;
+  background:#ddd;
+  border-radius:5px;
+}
+.ui-slider-handle{
+  top: -8px;
+  margin-left: -9px;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  background-image: linear-gradient(to bottom,#5ccfff 0,#5ccfff 100%);
+  background-repeat: repeat-x;
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  z-index: 19;
+  left:20px;
+}
+.ui-slider-back{
+  overflow: hidden;
+  height:100%;
+  position: absolute;
+  background-color: #5ccfff;
+  border-radius:5px;
+  width:10%;
+}

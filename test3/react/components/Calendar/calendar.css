@@ -1,0 +1,108 @@
+.calendar-ui-text {
+    display: block;
+    margin: 0 auto;
+    color: #333;
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid transparent;
+    padding: 0;
+    background: transparent;
+    text-align: center;
+    font-weight: normal;
+}
+.calendar-ui-text:hover,.calendar-ui-year:hover,.calendar-ui-month:hover{
+    background: #eaf8fe;
+    cursor: pointer;
+}
+.calendar-ui-today {
+    color: #2db7f5;
+    border-color: #2db7f5;
+}
+.calendar-ui-select{
+    background: #2db7f5;
+    color: #fff;
+}
+.calendar-ui-year.calendar-ui-year-select {
+    background: #2db7f5;
+    color: #fff;
+}
+.calendar-ui-month.calendar-ui-month-select {
+    background: #2db7f5;
+    color: #fff;
+}
+.calendar-ui-text.calendar-ui-select:hover{
+    background: #2db7f5;
+}
+.table-ui{
+    width:100%;
+    background:#fff;
+}
+.calendar-box a{
+    text-decoration: none;
+    color:#333;
+}
+.calendar-box a:hover{
+    color:#2db7f5;
+}
+.calendar-box .table-ui td{
+    border-top:none;
+}
+.calendar-box .table-ui th{
+    border-bottom:none;
+}
+.calendar-ui-column{
+    text-align: center;
+}
+.calendar-box{
+    width:485px;
+    padding:0 10px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+.calendar-ui-others,.calendar-ui-year.calendar-ui-year-others {
+    color: #ccc;
+}
+
+.calendar-ui-year,.calendar-ui-month{
+    display: block;
+    margin: 0 auto;
+    color: #333;
+    border-radius: 4px;
+    width: 100px;
+    height: 85px;
+    line-height: 85px;
+    border: 1px solid transparent;
+    padding: 0;
+    background: transparent;
+    text-align: center;
+    font-weight: normal;
+}
+.calendar-ui-header{
+    line-height:40px;
+    padding:10px 0;
+    border-bottom:1px solid #ccc;
+    overflow: hidden;
+}
+.calendar-header-left{
+    float: left;
+    width:10%;
+    text-align: center;
+    line-height:40px;
+}
+.calendar-header-right{
+    float: right;
+    width:10%;
+    text-align: center;
+    line-height:40px;
+}
+.header-wrap{
+    text-align: center;
+}
+.header-wrap span a{
+    padding:0 10px;
+}
+.year-range:hover{
+    color:#2db7f5;
+}
