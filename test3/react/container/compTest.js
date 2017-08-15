@@ -2,13 +2,19 @@ import React,{Component,PropTypes} from 'react'
 import Calendar from '../components/Calendar/Calendar'
 import '../style/index.css'
 import Button from '../components/noState'
-import Tab from '../components/Tab/index'
+import Tab from '../components/Tab'
 import Select from '../components/select'
 import UploadImg from '../components/uploadImg'
-import Slider from '../components/slider/index.js'
+import Slider from '../components/slider'
+import Modal from '../components/modal'
 
 class CompTest extends Component{
-
+  constructor(props){
+    super(props);
+    this.state = {
+      visible:false
+    }
+  }
   render(){
     return(
       <div className="normBlock">
@@ -48,10 +54,15 @@ class CompTest extends Component{
         </div>
 
         <div className="testBlock">
+          <h4 className="block_title">模态框</h4>
+          <button className="btn btn-default" onClick={()=>this.setState({visible:true})}>模态框测试</button>
+        </div>
+
+        <div className="testBlock">
           <h4 className="block_title">日历组件</h4>
           <Calendar />
         </div>
-
+        <Modal visible={this.state.visible} onMaskClick={()=>{this.setState({visible:false})}}/>
       </div>
     )
   }

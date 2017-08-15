@@ -1,4 +1,4 @@
-import UploadImg from './uploadImg'
+import UploadImg from './uploadImg.jsx'
 import './uploadImg.css'
 
 export default UploadImg;

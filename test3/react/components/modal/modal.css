@@ -1,0 +1,46 @@
+.ui-modal{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  align-items: center;
+  justify-items: center;
+  user-select: none;
+  z-index:10;
+}
+.ui-modal-wraper{
+  width:100%;
+  margin:0 auto;
+}
+.ui-modal-dialog{
+  position: relative;
+  margin: 60px auto;
+  background: #fff;
+  box-shadow: 0 7px 21px rgba(0,0,0,.2);
+  overflow: hidden;
+  z-index: 11;
+}
+.zoom-enter{
+  animation:zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+.zoom-leave{
+  animation:zoom-leave both;
+}
+
+@keyframes zoom-enter {
+  from{
+    transform:scale3d(.3,.3,.3)
+  }to{
+    transform:scale3d(1,1,1)
+  }
+}
+
+@keyframes zoom-leave {
+  from{
+    transform:scale3d(1,1,1)
+  }to{
+     transform:scale3d(.3,.3,.3)
+   }
+}
